@@ -21,6 +21,8 @@ module.exports = {
       turqueza: "#87CEFA",
       green: "#008000",
       black: "#000000",
+      azulreal: "#4169E1",
+      white: "#FFFFFF",
     },
     fontFamily: {
       juana: ["Poppins", "sans-serif"],
