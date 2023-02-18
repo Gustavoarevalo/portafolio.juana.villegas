@@ -8,12 +8,11 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=" hidden sm:block w-96 h-96 ml-10 mt-24">
+      <nav className=" hidden sm:block w-96 h-96 ml-10 mt-36 ">
         <Link to="/">
           <div className="font-juana font-semibold text-3xl text-turqueza text-justify">
-            <h1> Juana</h1>
+            <h1> Juanita</h1>
             <h1> Villegas</h1>
-            <h1> Otronombre</h1>
           </div>
         </Link>
         <Link to="/">
@@ -31,7 +30,7 @@ const Navbar = () => {
             About
           </h1>
         </Link>
-        <Link to="/">
+        <Link to="contact">
           <h1 className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
             Contact
           </h1>
