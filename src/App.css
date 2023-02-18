@@ -1,0 +1,21 @@
+.lbl-nombre {
+  display: block;
+  width: 400px;
+  border: 2px solid #afeeee;
+}
+
+.div {
+  margin-bottom: 5px;
+}
+
+.text {
+  border: none;
+  background: transparent;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.text-nomb {
+  color: #afeeee;
+}

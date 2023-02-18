@@ -40,9 +40,8 @@ const Navbar = () => {
       <nav className="block sm:hidden z-[100] h-20 bg-turqueza">
         <div className="grid grid-cols-2 gap-4">
           <Link to="/">
-            <div className="mt-4 ml-4 w-36 font-juana font-semibold text-md text-black  ">
+            <div className="mt-6 ml-4 w-36 font-juana font-bold text-lg text-black  ">
               <h1> Juana villegas </h1>
-              <h2>otronombre</h2>
             </div>
           </Link>
           <div>
@@ -63,7 +62,7 @@ const Navbar = () => {
       </nav>
 
       {isOpen && (
-        <div className="block sm:hidden opacity-20">
+        <div className="block sm:hidden opacity-40">
           <div className="bg-turqueza absolute w-screen h-full flex items-center ">
             <div className="mx-auto ">
               <Link
