@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "../css/App.css";
 
 const Formulario = (props) => {
   const inicialvalues = {
@@ -43,7 +43,7 @@ const Formulario = (props) => {
     <>
       {" "}
       <form onSubmit={handlesubmit}>
-        <div className="mt-10 lg:mt-24">
+        <div className="mt-5 lg:mt-24">
           <div className="div">
             <label className="label">
               <span className="span">Name</span>

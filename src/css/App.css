@@ -1,12 +1,17 @@
 .label {
   display: block;
-  width: 400px;
+  width: 500px;
   border: 2px solid #afeeee;
   padding: 8px 10px;
   position: relative;
   box-sizing: border-box;
   border-radius: 5px;
-  transition: 0.25s;
+}
+
+@media (max-width: 1023px) {
+  .label {
+    width: 300px;
+  }
 }
 
 .div {
@@ -27,6 +32,7 @@
   position: absolute;
   top: 8px;
   left: 10px;
+  transition: 0.45s;
 }
 
 .label.focus {

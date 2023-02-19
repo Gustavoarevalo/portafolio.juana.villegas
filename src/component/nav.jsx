@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/nav.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=" hidden sm:block w-96 h-96 ml-10 mt-36 ">
+      <nav className=" hidden lg:block w-96 h-96 ml-10 mt-36 ">
         <Link to="/">
           <div className="font-juana font-semibold text-3xl text-turqueza text-justify">
             <h1> Juanita</h1>
@@ -20,28 +21,28 @@ const Navbar = () => {
             Home
           </p>
         </Link>
-        <Link to="/">
-          <h1 className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
+        <Link to="gallery">
+          <p className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
             Galleries
-          </h1>
+          </p>
         </Link>
-        <Link to="/">
-          <h1 className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
+        <Link to="about">
+          <p className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
             About
-          </h1>
+          </p>
         </Link>
         <Link to="contact">
-          <h1 className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
+          <p className="font-juana text-black mt-8  hover:text-turqueza active:text-turqueza">
             Contact
-          </h1>
+          </p>
         </Link>
       </nav>
 
-      <nav className="block sm:hidden z-[100] h-20 bg-turqueza">
+      <nav className="block lg:hidden h-20 bg-turqueza">
         <div className="grid grid-cols-2 gap-4">
           <Link to="/">
-            <div className="mt-6 ml-4 w-36 font-juana font-bold text-lg text-black  ">
-              <h1> Juana villegas </h1>
+            <div className="mt-3 ml-4 w-36 font-juana font-bold text-lg text-black  ">
+              <h1> Juanita villegas </h1>
             </div>
           </Link>
           <div>
@@ -62,33 +63,33 @@ const Navbar = () => {
       </nav>
 
       {isOpen && (
-        <div className="block sm:hidden opacity-40">
-          <div className="bg-turqueza absolute w-screen h-full flex items-center ">
-            <div className="mx-auto ">
+        <div className="block lg:hidden ">
+          <div className="navpadre  ">
+            <div className="mx-auto z-20">
               <Link
                 to="/"
-                className="block opacity-90 px-6 w-32 font-medium mt-4 text-2xl "
+                className="block px-6 w-32 font-medium mt-4 text-2xl "
                 onClick={cerrar}
               >
                 HOME
               </Link>
               <Link
-                to="/about"
-                className="block opacity-90 px-5 w-32 font-medium mt-4 text-2xl"
+                to="gallery"
+                className="block px-3 w-32 font-medium mt-4 text-2xl"
                 onClick={cerrar}
               >
                 Galleries
               </Link>
               <Link
-                to="/skill"
-                className="block opacity-90 px-6 w-32 font-medium mt-4 text-2xl"
+                to="about"
+                className="block px-6 w-32 font-medium mt-4 text-2xl"
                 onClick={cerrar}
               >
                 About
               </Link>
               <Link
-                to="/contact"
-                className="block opacity-90 px-2 w-32 font-medium mt-4 text-2xl"
+                to="contact"
+                className="block px-4 w-32 font-medium mt-4 text-2xl"
                 onClick={cerrar}
               >
                 Contact

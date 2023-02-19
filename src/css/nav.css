@@ -1,0 +1,9 @@
+.navpadre {
+  background-color: rgb(70, 130, 180, 0.5);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}

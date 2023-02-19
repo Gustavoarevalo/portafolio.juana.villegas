@@ -28,7 +28,7 @@ const Linkformulario = () => {
           titulo={contactoAgregado.nombre}
         >
           <h3 className="text-left">Message Send:</h3>
-          <p>{contactoAgregado.nombre}</p>
+          <p>{contactoAgregado.asunto}</p>
         </Modal>
       )}
     </>
