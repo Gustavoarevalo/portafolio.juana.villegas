@@ -17,7 +17,11 @@ const Formulario = (props) => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    props.addedit(values);
+    const newValues = {
+      ...values,
+      fecha: new Date().toLocaleString(),
+    };
+    props.addedit(newValues);
     setvalue({ ...inicialvalues });
   };
 
@@ -41,7 +45,6 @@ const Formulario = (props) => {
 
   return (
     <>
-      {" "}
       <form onSubmit={handlesubmit}>
         <div className="mt-5 lg:mt-24">
           <div className="div">
