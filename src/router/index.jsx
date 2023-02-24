@@ -3,6 +3,7 @@ import Layoutpublic from "../layout/layoutp";
 import About from "../pages/about";
 import Contact from "../pages/contact";
 import Gallery from "../pages/galleries";
+import Galeriaid from "../pages/galeriaid";
 
 import Home from "../pages/home";
 import Login from "../pages/login";
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
       {
         path: "gallery",
         element: <Gallery />,
+      },
+
+      {
+        path: "gallery/:categoria",
+        element: <Galeriaid />,
       },
       {
         path: "login",

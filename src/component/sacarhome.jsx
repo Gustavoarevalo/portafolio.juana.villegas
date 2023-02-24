@@ -25,9 +25,13 @@ const Sacarhome = () => {
         <div className="grid gap-x-8 gap-y-4 grid-cols-5 mt-12 ">
           {obtenerimagen &&
             obtenerimagen.map((home) => (
-              <ul key={home.id}>
-                <img src={home.imagen} alt={home.nombre} className="w-64" />
-              </ul>
+              <p key={home.id} className="">
+                <img
+                  src={home.imagen}
+                  alt={home.nombre}
+                  className="w-64 hover:shadow-md"
+                />
+              </p>
             ))}
         </div>
       </div>

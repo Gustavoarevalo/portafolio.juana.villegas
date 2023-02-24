@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
 import { db } from "../api-firebase";
 import _ from "lodash";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   const [categorias, setCategorias] = useState(null);
@@ -37,13 +38,17 @@ const Gallery = () => {
   return (
     <>
       <div>
-        <div className="grid gap-x-8 gap-y-4 grid-cols-5 mt-12 ">
+        <div className="grid gap-x-8 gap-y-6 grid-cols-5 mt-12 ">
           {categorias &&
             categorias.map((img) => (
-              <ul key={img.categoria}>
-                <p>{img.categoria}</p>
-                <img src={img.imagen} alt={img.nombre} />
-              </ul>
+              <Link to={`/gallery/${img.categoria}`} key={img.categoria}>
+                <div className="bg-amarillosuave p-4 w-64 h-64 text-center rounded-lg hover:shadow-md">
+                  <p className="font-juana text-black font-semibold text-xl">
+                    {img.categoria}
+                  </p>
+                  <img src={img.imagen} alt={img.nombre} className="" />
+                </div>
+              </Link>
             ))}
         </div>
       </div>
