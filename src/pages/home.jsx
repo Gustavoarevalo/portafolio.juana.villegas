@@ -1,7 +1,12 @@
+import React from "react";
+import Sacarhome from "../component/sacarhome";
+
 const Home = () => {
   return (
     <>
-      <main> home</main>
+      <main>
+        <Sacarhome />
+      </main>
     </>
   );
 };

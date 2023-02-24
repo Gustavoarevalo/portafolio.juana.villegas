@@ -23,6 +23,7 @@ module.exports = {
       black: "#000000",
       azulreal: "#4169E1",
       white: "#FFFFFF",
+      amarillosuave: "#FAFAD2",
     },
     fontFamily: {
       juana: ["Poppins", "sans-serif"],

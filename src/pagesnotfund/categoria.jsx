@@ -1,14 +1,9 @@
 import {
   collection,
   getDocs,
-  query,
   doc,
-  getDoc,
   addDoc,
   deleteDoc,
-  updateDoc,
-  setDoc,
-  where,
 } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { db } from "../api-firebase";
