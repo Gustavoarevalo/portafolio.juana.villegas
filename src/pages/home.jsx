@@ -3,11 +3,9 @@ import Sacarhome from "../component/sacarhome";
 
 const Home = () => {
   return (
-    <>
-      <main>
-        <Sacarhome />
-      </main>
-    </>
+    <main className="ml-96">
+      <Sacarhome />
+    </main>
   );
 };
 export default Home;

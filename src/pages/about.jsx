@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <>
-      <main>about</main>
+      <main className="ml-96">about</main>
     </>
   );
 };

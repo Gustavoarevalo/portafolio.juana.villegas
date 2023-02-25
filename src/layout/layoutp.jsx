@@ -6,7 +6,7 @@ const Layoutpublic = () => {
     <>
       <div className="hidden lg:block">
         <div className="flex flex-nowrap">
-          <Navbar className="mr-2" />
+          <Navbar className="mr-2 " />
           <Outlet className="flex-1" />
         </div>
       </div>

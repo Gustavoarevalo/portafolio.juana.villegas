@@ -15,6 +15,7 @@
     "react-router-dom": "^6.8.1",
     "slugify": "^1.6.5",
     "styled-components": "^5.3.6",
+    "tw-elements": "^1.0.0-beta1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

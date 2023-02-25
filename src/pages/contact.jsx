@@ -3,7 +3,7 @@ import Linkformulario from "../component/linkformulario";
 
 const Contact = () => {
   return (
-    <main>
+    <main className="ml-96">
       <h1 className="font-juana font-bold text-4xl text-turqueza mt-14 sm:mt-24 text-center">
         Contact
       </h1>

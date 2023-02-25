@@ -36,23 +36,27 @@ const Gallery = () => {
   }, []);
 
   return (
-    <>
-      <div>
-        <div className="grid gap-x-8 gap-y-6 grid-cols-5 mt-12 ">
-          {categorias &&
-            categorias.map((img) => (
-              <Link to={`/gallery/${img.categoria}`} key={img.categoria}>
-                <div className="bg-amarillosuave p-4 w-64 h-64 text-center rounded-lg hover:shadow-md">
+    <main className="ml-96 mt-12 ">
+      <div className="grid gap-x-8 gap-y-6 grid-cols-5 ">
+        {categorias &&
+          categorias.map((img) => (
+            <Link
+              to={`/gallery/${img.categoria}`}
+              key={img.categoria}
+              className=""
+            >
+              <div className="bg-amarillosuave p-4 w-64 text-center rounded-lg hover:shadow-lg">
+                <div className="h-12">
                   <p className="font-juana text-black font-semibold text-xl">
                     {img.categoria}
                   </p>
-                  <img src={img.imagen} alt={img.nombre} className="" />
                 </div>
-              </Link>
-            ))}
-        </div>
+                <img src={img.imagen} alt={img.nombre} className="" />
+              </div>
+            </Link>
+          ))}
       </div>
-    </>
+    </main>
   );
 };
 

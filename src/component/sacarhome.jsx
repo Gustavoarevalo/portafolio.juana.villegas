@@ -22,17 +22,19 @@ const Sacarhome = () => {
   return (
     <>
       <div>
-        <div className="grid gap-x-8 gap-y-4 grid-cols-5 mt-12 ">
-          {obtenerimagen &&
-            obtenerimagen.map((home) => (
-              <p key={home.id} className="">
-                <img
-                  src={home.imagen}
-                  alt={home.nombre}
-                  className="w-64 hover:shadow-md"
-                />
-              </p>
-            ))}
+        <div className=" mt-12 ">
+          <div className="columns-1 sm:columns-5 mb-28 gap-2 space-y-3 ">
+            {obtenerimagen &&
+              obtenerimagen.map((home) => (
+                <p key={home.id} className="bg-amarillo p-2 hover:shadow-lg">
+                  <img
+                    src={home.imagen}
+                    alt={home.nombre}
+                    className="break-inside-avoid w-64 "
+                  />
+                </p>
+              ))}
+          </div>
         </div>
       </div>
     </>

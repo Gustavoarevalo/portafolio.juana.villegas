@@ -6,22 +6,15 @@ import {
   doc,
   deleteDoc,
 } from "firebase/firestore";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 import { db, app } from "../api-firebase";
 import { v4 } from "uuid";
 import slugify from "slugify";
 
-const Imagenes = () => {
+const Pruebas = () => {
   const [nombre, setNombre] = useState("");
   const [categoria, setCategoria] = useState("");
-  const [archivo, setArchivo] = useState(null);
-  const [mensaje, setMensaje] = useState("");
+  const [imagen, setImagen] = useState("");
   const [categorias, setCategorias] = useState([]);
   const [obtenerimagen, setObtenerimagen] = useState(null);
 
@@ -64,8 +57,8 @@ const Imagenes = () => {
     setCategoria(e.target.value);
   };
 
-  const handleArchivo = (e) => {
-    setArchivo(e.target.files[0]);
+  const handleUrl = (e) => {
+    setImagen(e.target.value);
   };
 
   // Subir imagen a Firebase Storage
@@ -73,16 +66,6 @@ const Imagenes = () => {
     e.preventDefault();
 
     // Subir imagen a Firebase Storage
-    if (!archivo) {
-      setMensaje("Por favor seleccione un archivo");
-      return;
-    }
-
-    const storageRef = ref(storage, `imagenes/${idinterno}`);
-    await uploadBytes(storageRef, archivo);
-
-    // Obtener la URL de descarga de la imagen en Firebase Storage
-    const downloadURL = await getDownloadURL(storageRef);
 
     // Guardar datos en Firestore
     const colRef = collection(db, "imagenes");
@@ -90,7 +73,7 @@ const Imagenes = () => {
     await addDoc(colRef, {
       nombre,
       categoria,
-      imagen: downloadURL,
+      imagen,
       idinterior: idinterno,
       fecha: new Date().toLocaleString(),
       slug: slug,
@@ -99,8 +82,7 @@ const Imagenes = () => {
     // Limpiar campos del formulario
     setNombre("");
     setCategoria("");
-    setArchivo(null);
-    setMensaje("Imagen subida correctamente");
+    setImagen("");
 
     sacarimagenes();
   };
@@ -108,7 +90,7 @@ const Imagenes = () => {
   //eliminar imagenes
   const eliminarimagen = async (id, nombreImagen) => {
     // Eliminar imagen de Firebase Storage
-
+    console.log(id);
     const storageRef = ref(storage, `imagenes/${nombreImagen}`);
 
     await deleteObject(storageRef);
@@ -124,7 +106,7 @@ const Imagenes = () => {
   return (
     <>
       <h1>Subir Imagen</h1>
-      {mensaje && <p>{mensaje}</p>}
+
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="nombre">Nombre:</label>
@@ -137,7 +119,12 @@ const Imagenes = () => {
         </div>
         <div>
           <label htmlFor="categoria">Categoría:</label>
-          <select id="categoria" value={categoria} onChange={handleCategoria}>
+          <select
+            id="categoria"
+            value={categoria}
+            onChange={handleCategoria}
+            required
+          >
             <option value="">Seleccione una categoría</option>
             {categorias.map((cat) => (
               <option key={cat.id} value={cat.categoria}>
@@ -147,8 +134,14 @@ const Imagenes = () => {
           </select>
         </div>
         <div>
-          <label htmlFor="archivo">Archivo:</label>
-          <input type="file" id="archivo" onChange={handleArchivo} />
+          <label htmlFor="nombre">Url:</label>
+          <input
+            type="text"
+            id="nombre"
+            value={imagen}
+            onChange={handleUrl}
+            required
+          />
         </div>
         <button type="submit">Subir Imagen</button>
       </form>
@@ -174,4 +167,4 @@ const Imagenes = () => {
   );
 };
 
-export default Imagenes;
+export default Pruebas;

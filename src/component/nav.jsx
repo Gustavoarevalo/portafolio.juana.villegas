@@ -9,7 +9,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=" hidden lg:block w-96 h-96 ml-10 mt-36 ">
+      <nav className=" hidden lg:block w-96 h-96 ml-10 mt-36  fixed top-0">
         <Link to="/">
           <div className="font-juana font-semibold text-3xl text-turqueza text-justify">
             <h1 className=""> Juanita</h1>

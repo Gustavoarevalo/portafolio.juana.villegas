@@ -7,7 +7,6 @@ import {
 } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { db } from "../api-firebase";
-import slugify from "slugify";
 
 const Categoria = () => {
   const colRef = collection(db, "categorias");
@@ -26,8 +25,8 @@ const Categoria = () => {
   const handleinput = async (e) => {
     e.preventDefault();
     const categoria = e.target.categoria.value;
-    const slug = slugify(categoria, { lower: true });
-    const guardarcategoria = { categoria: categoria, slug: slug };
+
+    const guardarcategoria = { categoria: categoria };
     await addDoc(colRef, guardarcategoria);
     setinputcategoria("");
     getItems();
@@ -53,8 +52,10 @@ const Categoria = () => {
 
   return (
     <>
-      <div>categoria</div>
-      <div>
+      <div className="font-juana text-black font-semibold text-xl mt-8">
+        categoria
+      </div>
+      <div className="mt-8">
         <form onSubmit={handleinput}>
           <input
             type="text"
@@ -63,11 +64,17 @@ const Categoria = () => {
             required
             value={inputcategoria}
             onChange={handlecategoria}
+            className="border-4 border-azul h-12"
           />
-          <button type="submit">Guardar</button>
+          <button
+            type="submit"
+            className="bg-turqueza p-2 rounded-md font-juana text-white font-semibold hover:bg-azul ml-2"
+          >
+            Guardar
+          </button>
         </form>
       </div>
-      <div>
+      <div className="mt-12">
         {obtenercategoria &&
           obtenercategoria.map((cat) => (
             <ul key={cat.id} className="mt-5">
@@ -77,6 +84,7 @@ const Categoria = () => {
                 onClick={() => {
                   eliminarcategoria(cat.id);
                 }}
+                className="bg-rojopuro p-2 rounded-md font-juana text-white font-semibold hover:bg-rojooscuro"
               >
                 eliminar categoria
               </button>

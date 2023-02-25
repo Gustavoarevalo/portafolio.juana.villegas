@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 const Galeriaid = () => {
   const id = useParams().categoria;
-  console.log(id);
   const [imagenes, setImagenes] = useState([]);
 
   useEffect(() => {
@@ -20,15 +19,23 @@ const Galeriaid = () => {
   }, []);
 
   return (
-    <>
-      <h1>Imágenes de la categoría {id}</h1>
-      <div>
+    <main className="ml-96">
+      <h1 className="font-juana text-black font-bold text-xl  mt-12 text-center ">
+        Imágenes por categoría
+      </h1>
+      <div className="columns-1 sm:columns-5 mb-28 gap-2 space-y-3 mt-12 ">
         {imagenes &&
           imagenes.map((imagen) => (
-            <img src={imagen.imagen} alt={imagen.nombre} key={imagen.id} />
+            <p key={imagen.id} className="bg-amarillo p-2 hover:shadow-lg">
+              <img
+                src={imagen.imagen}
+                alt={imagen.nombre}
+                className="break-inside-avoid w-64 "
+              />
+            </p>
           ))}
       </div>
-    </>
+    </main>
   );
 };
 
