@@ -36,8 +36,8 @@ const Gallery = () => {
   }, []);
 
   return (
-    <main className="ml-96 mt-12 ">
-      <div className="grid gap-x-8 gap-y-6 grid-cols-5 ">
+    <main className="ml-1 lg:ml-96 mt-12 ">
+      <div className="grid gap-x-8 gap-y-6 grid-cols-1 sm:grid-cols-5 ">
         {categorias &&
           categorias.map((img) => (
             <Link
@@ -45,7 +45,7 @@ const Gallery = () => {
               key={img.categoria}
               className=""
             >
-              <div className="bg-amarillosuave p-4 w-64 text-center rounded-lg hover:shadow-lg">
+              <div className="bg-amarillosuave p-4 w-96 sm:w-64 text-center rounded-lg hover:shadow-lg">
                 <div className="h-12">
                   <p className="font-juana text-black font-semibold text-xl">
                     {img.categoria}

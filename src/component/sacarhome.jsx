@@ -23,14 +23,14 @@ const Sacarhome = () => {
     <>
       <div>
         <div className=" mt-12 ">
-          <div className="columns-1 sm:columns-5 mb-28 gap-2 space-y-3 ">
+          <div className="columns-1 sm:columns-5 gap-2 space-y-3 ">
             {obtenerimagen &&
               obtenerimagen.map((home) => (
                 <p key={home.id} className="bg-amarillo p-2 hover:shadow-lg">
                   <img
                     src={home.imagen}
                     alt={home.nombre}
-                    className="break-inside-avoid w-64 "
+                    className="break-inside-avoid w-96 sm:w-64 "
                   />
                 </p>
               ))}

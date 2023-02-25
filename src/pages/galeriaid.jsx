@@ -19,7 +19,7 @@ const Galeriaid = () => {
   }, []);
 
   return (
-    <main className="ml-96">
+    <main className="ml-1 lg:ml-96">
       <h1 className="font-juana text-black font-bold text-xl  mt-12 text-center ">
         Imágenes por categoría
       </h1>
@@ -30,7 +30,7 @@ const Galeriaid = () => {
               <img
                 src={imagen.imagen}
                 alt={imagen.nombre}
-                className="break-inside-avoid w-64 "
+                className="break-inside-avoid w-96 sm:w-64 "
               />
             </p>
           ))}
